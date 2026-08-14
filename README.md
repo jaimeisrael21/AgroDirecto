@@ -12,23 +12,27 @@ Proyecto desarrollado para el **Avance 1 — Semana 8** del curso Desarrollo Ful
 - Perfiles diferenciados de comprador, productor y administrador.
 - Registro e inicio de sesión simulados para demostración.
 - Catálogo con búsqueda, filtros y fichas de producto.
+- Dieciséis productos iniciales y alta, edición, borrador, retiro y republicación de productos.
+- Favoritos persistentes y filtro de productos guardados.
 - Ubicación aproximada mediante Leaflet y OpenStreetMap.
 - Carrito sujeto a la regla de un solo productor por pedido.
 - Confirmación de pedidos sin cobros ni pasarela real.
-- Seguimiento de pedidos y paneles de gestión por rol.
-- Persistencia local de la demostración mediante `localStorage`.
+- Seguimiento, cancelación y cambio de estado de pedidos con reposición de stock.
+- Paneles funcionales de comprador, productor y administrador.
+- Persistencia local de productos, borradores, favoritos, carrito, pedidos y sesión mediante `localStorage`.
+- Navegación inferior específica para teléfonos y controles táctiles.
 
 ## Alcance del Avance 1
 
 Esta versión valida la experiencia, la navegación y las principales reglas del negocio. No incluye backend multiusuario, base de datos remota, pagos reales, inteligencia artificial ni hardware.
 
-| Incluido | Planificado para el Avance 2 |
+| Incluido | Planificado según las instrucciones del curso |
 | --- | --- |
-| Frontend navegable | API REST |
-| Datos de demostración | PostgreSQL |
-| Persistencia local | Autenticación y autorización por roles |
+| Frontend navegable y responsive | Spring Boot y backend al 60% en el Avance 2 |
+| Datos de demostración | API REST o Spring MVC con Thymeleaf |
+| Persistencia local | Base de datos mediante Spring Data |
 | Mapa gratuito | Persistencia multiusuario |
-| Validación responsive | Pruebas de integración |
+| Roles simulados | Spring Security en la entrega final |
 
 ## Tecnologías
 

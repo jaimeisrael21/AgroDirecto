@@ -40,3 +40,23 @@ test("keeps starter preview artifacts removed", async () => {
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   await assert.rejects(access(new URL("app/_sites-preview/", projectRoot)));
 });
+
+test("includes the complete Avance 1 interactive scope", async () => {
+  const [source, styles] = await Promise.all([
+    readFile(new URL("../app/agrodirecto-app.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+
+  const requiredViews = [
+    "inicio", "login", "registro", "catalogo", "producto", "carrito",
+    "confirmar", "pedidos", "productor", "publicar", "recibidos", "admin",
+  ];
+  for (const view of requiredViews) assert.match(source, new RegExp(`${view}:`));
+
+  assert.match(source, /Guardar borrador/);
+  assert.match(source, /agrodirecto-products-v2/);
+  assert.match(source, /mobile-bottom-nav/);
+  assert.match(source, /Fundamento del proyecto/);
+  assert.match(styles, /@media \(max-width: 700px\)/);
+  assert.match(styles, /\.mobile-bottom-nav/);
+});
