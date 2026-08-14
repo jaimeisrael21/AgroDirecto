@@ -170,8 +170,6 @@ export default function AgroDirectoApp() {
   useEffect(() => {
     const savedCart = localStorage.getItem("agrodirecto-cart");
     const savedOrders = localStorage.getItem("agrodirecto-orders");
-    if (savedCart) setCart(JSON.parse(savedCart));
-    if (savedOrders) setOrders(JSON.parse(savedOrders));
     const syncHash = () => {
       const raw = window.location.hash.replace(/^#/, "");
       if (!raw) return;
@@ -179,9 +177,16 @@ export default function AgroDirectoApp() {
       if (screen in VIEW_LABELS) setView(screen as View);
       if (id && Number(id)) setSelectedProductId(Number(id));
     };
-    syncHash();
+    const hydrate = window.setTimeout(() => {
+      if (savedCart) setCart(JSON.parse(savedCart));
+      if (savedOrders) setOrders(JSON.parse(savedOrders));
+      syncHash();
+    }, 0);
     window.addEventListener("hashchange", syncHash);
-    return () => window.removeEventListener("hashchange", syncHash);
+    return () => {
+      window.clearTimeout(hydrate);
+      window.removeEventListener("hashchange", syncHash);
+    };
   }, []);
 
   useEffect(() => { localStorage.setItem("agrodirecto-cart", JSON.stringify(cart)); }, [cart]);
