@@ -30,26 +30,43 @@ test("server-renders the AgroDirecto prototype", async () => {
 
 test("keeps starter preview artifacts removed", async () => {
   const [page, layout, packageJson] = await Promise.all([
-    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../src/app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../src/app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /AgroDirectoApp/);
   assert.match(layout, /AgroDirecto/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
-  await assert.rejects(access(new URL("app/_sites-preview/", projectRoot)));
+  await assert.rejects(access(new URL("src/app/_sites-preview/", projectRoot)));
 });
 
 test("includes the complete Avance 1 interactive scope", async () => {
   const [source, styles] = await Promise.all([
-    readFile(new URL("../app/agrodirecto-app.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    Promise.all(
+      [
+        "components/AgroDirectoApp.tsx",
+        "screens/ProductForm.tsx",
+        "screens/Home.tsx",
+        "services/storage.ts",
+      ].map((file) => readFile(new URL(`../src/${file}`, import.meta.url), "utf8")),
+    ).then((files) => files.join("\n")),
+    readFile(new URL("../src/styles/globals.css", import.meta.url), "utf8"),
   ]);
 
   const requiredViews = [
-    "inicio", "login", "registro", "catalogo", "producto", "carrito",
-    "confirmar", "pedidos", "productor", "publicar", "recibidos", "admin",
+    "inicio",
+    "login",
+    "registro",
+    "catalogo",
+    "producto",
+    "carrito",
+    "confirmar",
+    "pedidos",
+    "productor",
+    "publicar",
+    "recibidos",
+    "admin",
   ];
   for (const view of requiredViews) assert.match(source, new RegExp(`${view}:`));
 

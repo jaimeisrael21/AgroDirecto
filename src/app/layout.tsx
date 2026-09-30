@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
@@ -7,8 +7,7 @@ export const metadata: Metadata = {
     default: "AgroDirecto",
     template: "%s | AgroDirecto",
   },
-  description:
-    "Del campo a tu negocio, sin tantos intermediarios. Prototipo académico UTP 2026.",
+  description: "Del campo a tu negocio, sin tantos intermediarios. Prototipo académico UTP 2026.",
   openGraph: {
     title: "AgroDirecto",
     description: "Del campo a tu negocio, sin tantos intermediarios.",

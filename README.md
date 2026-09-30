@@ -26,13 +26,13 @@ Proyecto desarrollado para el **Avance 1 — Semana 8** del curso Desarrollo Ful
 
 Esta versión valida la experiencia, la navegación y las principales reglas del negocio. No incluye backend multiusuario, base de datos remota, pagos reales, inteligencia artificial ni hardware.
 
-| Incluido | Planificado según las instrucciones del curso |
-| --- | --- |
-| Frontend navegable y responsive | Spring Boot y backend al 60% en el Avance 2 |
-| Datos de demostración | API REST o Spring MVC con Thymeleaf |
-| Persistencia local | Base de datos mediante Spring Data |
-| Mapa gratuito | Persistencia multiusuario |
-| Roles simulados | Spring Security en la entrega final |
+| Incluido                        | Planificado según las instrucciones del curso |
+| ------------------------------- | --------------------------------------------- |
+| Frontend navegable y responsive | Spring Boot y backend al 60% en el Avance 2   |
+| Datos de demostración           | API REST o Spring MVC con Thymeleaf           |
+| Persistencia local              | Base de datos mediante Spring Data            |
+| Mapa gratuito                   | Persistencia multiusuario                     |
+| Roles simulados                 | Spring Security en la entrega final           |
 
 ## Tecnologías
 
@@ -42,14 +42,20 @@ Esta versión valida la experiencia, la navegación y las principales reglas del
 - Leaflet y OpenStreetMap.
 - Node.js y pnpm.
 
+## Organización del código
+
+El código de la aplicación está dentro de `src/`: `app` contiene la entrada, `screens` las pantallas, `components` los elementos reutilizables y `hooks` el estado y las acciones compartidas. Los tipos, datos iniciales, servicios y estilos tienen sus propias carpetas.
+
+Consulta [la guía de estructura](docs/estructura.md) para saber dónde modificar cada parte y cómo se conectan los módulos.
+
 ## Evidencias
 
-| Catálogo | Detalle y mapa |
-| --- | --- |
+| Catálogo                                                   | Detalle y mapa                                                             |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------- |
 | ![Catálogo de productos](docs/screenshots/04-catalogo.png) | ![Detalle del producto con mapa](docs/screenshots/05-detalle-producto.png) |
 
-| Panel del productor | Vista móvil |
-| --- | --- |
+| Panel del productor                                             | Vista móvil                                               |
+| --------------------------------------------------------------- | --------------------------------------------------------- |
 | ![Panel del productor](docs/screenshots/09-panel-productor.png) | ![Adaptación móvil](docs/screenshots/13-inicio-movil.png) |
 
 Las trece capturas del prototipo están disponibles en [`docs/screenshots`](docs/screenshots).

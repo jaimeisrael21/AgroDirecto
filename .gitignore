@@ -38,3 +38,7 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# Local dependency cache
+/.pnpm-store/
+*.tsbuildinfo

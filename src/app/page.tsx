@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AgroDirectoApp from "./agrodirecto-app";
+import AgroDirectoApp from "@/components/AgroDirectoApp";
 
 export const metadata: Metadata = {
   title: "AgroDirecto | Del campo a tu negocio",
