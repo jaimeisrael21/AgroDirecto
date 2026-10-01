@@ -25,7 +25,6 @@ export function Admin({
           <div>
             <span className="eyebrow">Administración</span>
             <h1>Control general</h1>
-            <p>Vista académica para supervisar usuarios, categorías y publicaciones.</p>
           </div>
           <span className="prototype-chip">Datos simulados</span>
         </div>

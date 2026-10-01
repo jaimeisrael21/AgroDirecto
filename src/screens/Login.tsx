@@ -78,10 +78,6 @@ export function Login({
               Ingresar al prototipo
             </button>
           </form>
-          <div className="demo-note">
-            <strong>Acceso académico</strong>
-            <span>Las credenciales son ficticias y no se guardan.</span>
-          </div>
           <p className="auth-switch">
             ¿Aún no tienes cuenta? <button onClick={() => navigate("registro")}>Regístrate</button>
           </p>

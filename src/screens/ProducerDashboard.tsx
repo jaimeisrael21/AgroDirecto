@@ -30,16 +30,7 @@ export function ProducerDashboard({
             + Publicar producto
           </button>
         </div>
-        <div className="local-data-banner">
-          <span>✓</span>
-          <div>
-            <strong>Cambios guardados en este dispositivo</strong>
-            <p>
-              Los productos, borradores y pedidos permanecen después de recargar. En el Avance 2 se
-              migrarán a Spring Boot.
-            </p>
-          </div>
-        </div>
+        
         <div className="kpi-grid">
           <div>
             <span>Productos activos</span>
