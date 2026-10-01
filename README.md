@@ -85,5 +85,6 @@ La compilación de producción y las pruebas de renderizado se encuentran valida
 - Jaime Israel Aramburu Condori.
 - Leslie Liliana Cabrera Luley.
 - Jose Antonio Morote Sanchez.
+- Andrés Ronaldo Bayona Manrique.
 
 Curso: Desarrollo Full Stack — UTP, sección 45554, 2026.
