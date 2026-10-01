@@ -42,6 +42,28 @@ textarea {
 button {
   cursor: pointer;
 }
+button svg {
+  display: inline-block;
+  flex: none;
+  vertical-align: middle;
+}
+.account-link,
+.favorites-link,
+.cart-link,
+.mobile-toggle,
+.icon-action,
+.catalog-search button,
+.category-row button,
+.mobile-bottom-nav button,
+.single-producer-note > span:last-child,
+.cart-main button,
+.quantity-control button,
+.toast-message {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
 img {
   max-width: 100%;
 }
@@ -589,6 +611,11 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.6px;
   font-weight: 800;
+}
+.rating-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
 }
 .product-title-button {
   width: 100%;
