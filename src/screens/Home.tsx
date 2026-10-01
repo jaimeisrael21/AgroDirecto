@@ -2,6 +2,12 @@
 
 import type { AgroDirectoState } from "@/hooks/useAgroDirecto";
 import { ProductCard } from "@/components/ProductCard";
+import { Icon, type IconName } from "@/components/Icon";
+
+function CategoryIcon({ label }: { label: string }) {
+  const name: IconName = label.startsWith("Tub") ? "wheat" : label.startsWith("Fr") ? "leaf" : label.startsWith("Gra") ? "grid" : "sprout";
+  return <Icon name={name} size={22} strokeWidth={1.7} />;
+}
 
 export function Home({
   navigate,
@@ -92,7 +98,7 @@ export function Home({
                 navigate("catalogo");
               }}
             >
-              <span>{icon}</span>
+              <span><CategoryIcon label={label} /></span>
               {label}
             </button>
           ))}
