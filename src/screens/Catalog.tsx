@@ -2,6 +2,7 @@
 
 import type { AgroDirectoState } from "@/hooks/useAgroDirecto";
 import { ProductCard } from "@/components/ProductCard";
+import { Icon } from "@/components/Icon";
 
 export function Catalog({
   search,
@@ -47,7 +48,7 @@ export function Catalog({
               placeholder="Buscar papa, palta, café o productor…"
               aria-label="Buscar productos"
             />
-            <button aria-label="Buscar">Buscar</button>
+            <button aria-label="Buscar"><Icon name="search" size={17} /> Buscar</button>
           </div>
         </div>
       </section>
