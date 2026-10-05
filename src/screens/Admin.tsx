@@ -5,6 +5,7 @@ import { productStatus } from "@/utils/product";
 import { ProductStatusBadge } from "@/components/ProductStatusBadge";
 import { money } from "@/utils/format";
 import { StatusBadge } from "@/components/StatusBadge";
+import { CategoryIcon } from "@/components/CategoryIcon";
 
 export function Admin({
   activeProducts,
@@ -181,9 +182,11 @@ export function Admin({
           ) : null}
           {adminTab === "categorías" ? (
             <div className="category-admin">
-              {["Tubérculos", "Hortalizas", "Frutas", "Granos"].map((item, index) => (
+              {["Tubérculos", "Hortalizas", "Frutas", "Granos"].map((item) => (
                 <div key={item}>
-                  <span>{["🥔", "🥬", "🥑", "◌"][index]}</span>
+                  <span>
+                    <CategoryIcon label={item} />
+                  </span>
                   <strong>{item}</strong>
                   <small>{products.filter((p) => p.category === item).length} productos</small>
                   <button

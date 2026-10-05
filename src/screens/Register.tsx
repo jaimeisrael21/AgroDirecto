@@ -1,6 +1,7 @@
 "use client";
 
 import type { AgroDirectoState } from "@/hooks/useAgroDirecto";
+import { Icon } from "@/components/Icon";
 
 export function Register({
   navigate,
@@ -26,7 +27,9 @@ export function Register({
               className={role === "comprador" ? "selected" : ""}
               onClick={() => setRole("comprador")}
             >
-              <span>🏪</span>
+              <span>
+                <Icon name="home" size={28} strokeWidth={1.7} />
+              </span>
               <strong>Soy comprador</strong>
               <small>Restaurante, bodega o comercio</small>
             </button>
@@ -35,7 +38,9 @@ export function Register({
               className={role === "productor" ? "selected" : ""}
               onClick={() => setRole("productor")}
             >
-              <span>🌱</span>
+              <span>
+                <Icon name="sprout" size={28} strokeWidth={1.7} />
+              </span>
               <strong>Soy productor</strong>
               <small>Productor o asociación agrícola</small>
             </button>
