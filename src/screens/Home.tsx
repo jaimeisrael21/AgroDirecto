@@ -2,12 +2,7 @@
 
 import type { AgroDirectoState } from "@/hooks/useAgroDirecto";
 import { ProductCard } from "@/components/ProductCard";
-import { Icon, type IconName } from "@/components/Icon";
-
-function CategoryIcon({ label }: { label: string }) {
-  const name: IconName = label.startsWith("Tub") ? "wheat" : label.startsWith("Fr") ? "leaf" : label.startsWith("Gra") ? "grid" : "sprout";
-  return <Icon name={name} size={22} strokeWidth={1.7} />;
-}
+import { CategoryIcon } from "@/components/CategoryIcon";
 
 export function Home({
   navigate,
@@ -85,11 +80,11 @@ export function Home({
       <section className="category-strip">
         <div className="container category-row">
           {[
-            ["Tubérculos", "🥔"],
-            ["Hortalizas", "🥬"],
-            ["Frutas", "🥑"],
-            ["Granos", "◌"],
-          ].map(([label, icon]) => (
+            "Tubérculos",
+            "Hortalizas",
+            "Frutas",
+            "Granos",
+          ].map((label) => (
             <button
               key={label}
               onClick={() => {
